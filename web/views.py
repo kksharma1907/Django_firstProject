@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse  # Import HttpResponse
 from django.shortcuts import render
+from .models import Employee
+from .forms import EmployeeForm
 
 # Create your views here.
 
@@ -28,3 +30,20 @@ def about(request):
 
 def contact(request):
     return render(request, 'web/contact.html')
+
+def login(request):
+    return render(request, 'web/login.html')
+
+def create_employee(request):
+    employee_details=EmployeeForm()
+    return render(request,'web/create_employee.html',{'emp':employee_details})
+
+
+# def create_employee(request):
+#     if request.method == 'POST':
+#         employee_details = EmployeeForm(request.POST)
+
+#     else:
+#         employee_details = EmployeeForm()
+
+#     return render(request, 'web/create_employee.html', {'emp': employee_details})

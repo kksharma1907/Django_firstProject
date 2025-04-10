@@ -1,10 +1,56 @@
-{% extends "web/base.html" %} {% block title %}Home{% endblock %} {% block
-content %}
-<div class="content">
-  <h1>Welcome to My Website</h1>
-  <p>
-    This is the home page of the website. Explore our features and enjoy
-    browsing!
-  </p>
+{% extends "web/base.html" %} 
+
+{% load static %}
+
+{% block title %}Form Page{% endblock %} 
+
+<script src="{% static 'js/script.js' %}"></script>
+{% block content %}
+
+
+
+<style>
+  .onk {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<div class="onk">
+  <form method="post" name="myForm" onsubmit="return validate();">
+    {% csrf_token %}
+    <table cellspacing="2" cellpadding="8" border="1">
+      <tr>
+        <td align="right"><label for="name">Name</label></td>
+        <td><input type="text" name="Name" id="name" /></td>
+      </tr>
+      <tr>
+        <td align="right"><label for="email">Email</label></td>
+        <td><input type="text" name="EMail" id="email" /></td>
+      </tr>
+      <tr>
+        <td align="right"><label for="zip">Zip Code</label></td>
+        <td><input type="text" name="Zip" id="zip" /></td>
+      </tr>
+      <tr>
+        <td align="right"><label for="country">Country</label></td>
+        <td>
+          <select name="Country" id="country">
+            <option value="-1" selected>[choose yours]</option>
+            <option value="1">USA</option>
+            <option value="2">UK</option>
+            <option value="3">INDIA</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Submit" /></td>
+      </tr>
+    </table>
+  </form>
 </div>
+
 {% endblock %}

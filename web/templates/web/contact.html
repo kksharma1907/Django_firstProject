@@ -1,9 +1,16 @@
 {% extends "web/base.html" %}
+{% load static %}  {# <-- This is required to use the static tag #}
 
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
-<h1>Contact Us</h1>
-<p>Email: example@example.com</p>
-<p>Phone: +1234567890</p>
+<div class="bgc">
+  <h1>Contact Us</h1>
+  <p>Email: kk1907sharma@gmail.com</p>
+  <p>Phone: 8873358905</p>
+<br>
+  <img src="{% static '../static/images/Ducat_ID.jpg' %}" height="100" width="100" />
+</div>
+
+
 {% endblock %}

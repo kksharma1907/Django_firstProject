@@ -71,3 +71,11 @@ footer {
   left: 0;
   font-size: 14px;
 }
+
+.bgc {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
